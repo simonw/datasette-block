@@ -11,7 +11,7 @@ def asgi_wrapper(datasette):
         @wraps(app)
         async def block_prefixes(scope, recieve, send):
             for prefix in prefixes:
-                if scope["path"].startswith(prefix):
+                if scope["type"] == "http" and scope["path"].startswith(prefix):
                     await send_403(send)
                     return
             await app(scope, recieve, send)

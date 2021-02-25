@@ -29,7 +29,7 @@ setup(
     packages=["datasette_block"],
     entry_points={"datasette": ["block = datasette_block"]},
     install_requires=["datasette"],
-    extras_require={"test": ["pytest", "pytest-asyncio"]},
+    extras_require={"test": ["pytest", "pytest-asyncio", "asgi-lifespan"]},
     tests_require=["datasette-block[test]"],
     python_requires=">=3.6",
 )
